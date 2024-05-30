@@ -237,6 +237,35 @@ class _ProjectsDesktop extends StatelessWidget {
                                           ),
                                         ),
                                       ),
+                                       project["figma_url"] == null
+                                    ? Container()
+                                    : Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                                          onPressed: () async {
+                                            final url = project["figma_url"];
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          },
+                                          child: Row(
+                                            children: [
+                                              FaIcon(FontAwesomeIcons.figma,color: Colors.purple,),
+                                              SizedBox(width: 10),
+                                              Text(
+                                                "Figma",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelLarge!
+                                                    .copyWith(color: Colors.purple),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                 project["repository_url"] == null
                                     ? Container()
                                     : Padding(
@@ -410,6 +439,35 @@ class _ProjectsDesktop extends StatelessWidget {
                                                     .textTheme
                                                     .labelLarge!
                                                     .copyWith(color: Colors.white),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                       project["figma_url"] == null
+                                    ? Container()
+                                    : Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                                          onPressed: () async {
+                                            final url = project["figma_url"];
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          },
+                                          child: Row(
+                                            children: [
+                                              FaIcon(FontAwesomeIcons.figma,color: Colors.purple),
+                                              SizedBox(width: 10),
+                                              Text(
+                                                "Figma",
+                                                style: Theme.of(context)
+                                                    .textTheme
+                                                    .labelLarge!
+                                                    .copyWith(color: Colors.purple),
                                               ),
                                             ],
                                           ),

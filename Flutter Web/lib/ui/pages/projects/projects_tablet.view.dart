@@ -162,8 +162,7 @@ class _ProjectsTablet extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: MyTheme.card_body_color,
                         shape: BoxShape.rectangle,
-                        borderRadius:
-                            BorderRadius.only(topRight: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
+                        borderRadius: BorderRadius.only(topRight: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
                       ),
                       child: Column(
                         children: [
@@ -199,10 +198,7 @@ class _ProjectsTablet extends StatelessWidget {
                                               SizedBox(width: 10),
                                               Text(
                                                 "App Store",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(color: Colors.white),
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
                                               ),
                                             ],
                                           ),
@@ -228,10 +224,33 @@ class _ProjectsTablet extends StatelessWidget {
                                               SizedBox(width: 10),
                                               Text(
                                                 "Play Store",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(color: Colors.white),
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                project["figma_url"] == null
+                                    ? Container()
+                                    : Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                                          onPressed: () async {
+                                            final url = project["playfigma_urlstore_url"];
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          },
+                                          child: Row(
+                                            children: [
+                                              FaIcon(FontAwesomeIcons.figma, color: Colors.purple),
+                                              SizedBox(width: 10),
+                                              Text(
+                                                "Figma",
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.purple),
                                               ),
                                             ],
                                           ),
@@ -256,10 +275,7 @@ class _ProjectsTablet extends StatelessWidget {
                                               SizedBox(width: 10),
                                               Text(
                                                 "Source Code",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(color: Colors.white),
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
                                               ),
                                             ],
                                           ),
@@ -337,8 +353,7 @@ class _ProjectsTablet extends StatelessWidget {
                         decoration: BoxDecoration(
                           color: MyTheme.card_body_color,
                           shape: BoxShape.rectangle,
-                          borderRadius:
-                              BorderRadius.only(bottomLeft: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
+                          borderRadius: BorderRadius.only(bottomLeft: Radius.circular(15.0), bottomRight: Radius.circular(15.0)),
                         ),
                         child: Column(
                           children: [
@@ -377,10 +392,7 @@ class _ProjectsTablet extends StatelessWidget {
                                               SizedBox(width: 10),
                                               Text(
                                                 "App Store",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(color: Colors.white),
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
                                               ),
                                             ],
                                           ),
@@ -406,10 +418,33 @@ class _ProjectsTablet extends StatelessWidget {
                                               SizedBox(width: 10),
                                               Text(
                                                 "Play Store",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(color: Colors.white),
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                project["figma_url"] == null
+                                    ? Container()
+                                    : Padding(
+                                        padding: const EdgeInsets.all(8.0),
+                                        child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(backgroundColor: Colors.black),
+                                          onPressed: () async {
+                                            final url = project["figma_url"];
+                                            if (await canLaunch(url)) {
+                                              await launch(url);
+                                            } else {
+                                              throw 'Could not launch $url';
+                                            }
+                                          },
+                                          child: Row(
+                                            children: [
+                                              FaIcon(FontAwesomeIcons.figma, color: Colors.purple),
+                                              SizedBox(width: 10),
+                                              Text(
+                                                "Figma",
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.purple),
                                               ),
                                             ],
                                           ),
@@ -434,10 +469,7 @@ class _ProjectsTablet extends StatelessWidget {
                                               SizedBox(width: 10),
                                               Text(
                                                 "Source Code",
-                                                style: Theme.of(context)
-                                                    .textTheme
-                                                    .labelLarge!
-                                                    .copyWith(color: Colors.white),
+                                                style: Theme.of(context).textTheme.labelLarge!.copyWith(color: Colors.white),
                                               ),
                                             ],
                                           ),
